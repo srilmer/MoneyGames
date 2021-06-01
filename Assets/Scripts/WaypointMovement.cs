@@ -9,12 +9,13 @@ public class WaypointMovement : MonoBehaviour
     public int moveTo;
     public RigidbodyController rbController;
     public float epsilonTarget;
+    public List<Die> dies;
 
     private int waypointTargetIndex;
 
     private void Start()
     {
-        waypointTargetIndex = 0;
+        waypointTargetIndex = 0;      
     }
 
     private void Update()
@@ -25,6 +26,11 @@ public class WaypointMovement : MonoBehaviour
             SwitchToNextWayPoint();
         }
         MoveTowardsWaypointTarget();
+    }
+
+    public void setMoveto(int value)
+    {
+        this.moveTo += value;
     }
 
     private bool IsWaypointReached()
