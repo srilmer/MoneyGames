@@ -6,6 +6,7 @@ using UnityEngine;
 public class WaypointMovement : MonoBehaviour
 {
     public List<Transform> waypoints;
+    public int moveTo;
     public RigidbodyController rbController;
     public float epsilonTarget;
 
@@ -20,6 +21,7 @@ public class WaypointMovement : MonoBehaviour
     {
         if (IsWaypointReached())
         {
+            if(!isTileReached())
             SwitchToNextWayPoint();
         }
         MoveTowardsWaypointTarget();
@@ -29,6 +31,16 @@ public class WaypointMovement : MonoBehaviour
     {
         Vector3 myPosition = rbController.GetPosition();
         Vector3 targetPosition = GetWaypointTargetPosition();
+
+        float distanceToTarget = Vector3.Distance(myPosition, targetPosition);
+
+        return distanceToTarget < epsilonTarget;
+    }
+
+    private bool isTileReached()
+    {
+        Vector3 myPosition = rbController.GetPosition();
+        Vector3 targetPosition = waypoints[moveTo].position;
 
         float distanceToTarget = Vector3.Distance(myPosition, targetPosition);
 
