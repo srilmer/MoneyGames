@@ -95,7 +95,7 @@ public class MoneyController
         return investment[player];
     }
 
-    public void investMoney(string player){
+    public bool investMoney(string player){
 
         int price = 100;
         int bonus = 50;
@@ -104,11 +104,16 @@ public class MoneyController
             if (subtractMoney(player, price)){
 
             investment[player] = getInvestment(player) + bonus;
+            return true;
 
+            }
+            else {
+                return false;
             }           
         }
         else {
             Debug.Log("I don't recognise player " + player + ", I can't invest money!");
+            return false;
         }
     }
 
