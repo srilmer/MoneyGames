@@ -418,7 +418,11 @@ namespace Photon.Pun
         public virtual void OnErrorInfo(ErrorInfo errorInfo)
         {
         }
-    }
+
+        //public override void OnRoomListUpdate(List<RoomInfo> roomList) {
+        //}
+
+}
 
 
     /// <summary>
