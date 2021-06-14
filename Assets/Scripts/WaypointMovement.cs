@@ -15,7 +15,7 @@ public class WaypointMovement : MonoBehaviour
 
     private void Start()
     {
-        waypointTargetIndex = 0;      
+        waypointTargetIndex = 0;
     }
 
     private void Update()
@@ -39,7 +39,6 @@ public class WaypointMovement : MonoBehaviour
         Vector3 targetPosition = GetWaypointTargetPosition();
 
         float distanceToTarget = Vector3.Distance(myPosition, targetPosition);
-
         return distanceToTarget < epsilonTarget;
     }
 

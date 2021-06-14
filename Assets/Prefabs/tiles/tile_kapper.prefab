@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 884750900653525973}
   m_Layer: 0
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: Kapper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3560801790f654fb35376cd9476ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customCanvas: {fileID: 5466082854399272803, guid: ba82882807358664fb30b34ce42cd2e2, type: 3}
 --- !u!1 &8094072384934369788
 GameObject:
   m_ObjectHideFlags: 0
