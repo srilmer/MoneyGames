@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 5466082855152040443}
   - component: {fileID: 5466082855152040442}
   - component: {fileID: 5466082855152040441}
+  - component: {fileID: 9102416384142553279}
   m_Layer: 5
   m_Name: button_next
   m_TagString: Untagged
@@ -457,9 +458,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ShowUI, Assembly-CSharp
-        m_MethodName: closeUI
+      - m_Target: {fileID: 9102416384142553279}
+        m_TargetAssemblyTypeName: UI_Button, Assembly-CSharp
+        m_MethodName: HideUi
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -469,6 +470,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9102416384142553279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466082855152040423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847dccea3451dd046b6ad923862bc2b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 5466082854399272803}
 --- !u!1 &5466082855229078499
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,8 +46,6 @@ public class ShowUI : MonoBehaviour
         // Check if the player has moved from it's original location
         if(player.CompareTag("Player") && inTrigger && (startPos != ThePlayer.transform.position))
         {
-            Debug.Log("(1) Player stayed inside the trigger, finding right UI to display.");
-            Debug.Log("(2) Tag found: " + this.tag);
             switch (this.tag.ToString())
             {
                 case "Kapper":
@@ -58,8 +56,6 @@ public class ShowUI : MonoBehaviour
                     break;
                 case "Postbode":
                     postbode.enabled = true;
-                    Debug.Log("(3) Player landed on Postbode, activate UI");
-                    Debug.Log("postboden ui status: " + postbode.enabled.ToString());
                     break;
                 case "PizzaBezorger":
                     pizzaBezorger.enabled = true;
