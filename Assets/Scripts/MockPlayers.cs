@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MockPlayers : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class MockPlayers : MonoBehaviour
 
     List<string> players = new List<string>();
 
+    //public Text Player1;
+
+    
+
+
     void Start()
     {
 
@@ -17,9 +23,16 @@ public class MockPlayers : MonoBehaviour
         players.Add("Kapper");
         players.Add("Postbode");
 
-        MoneyController moneyController = new MoneyController(players);
-
+        MoneyController moneyController = GameObject.FindObjectOfType(typeof(MoneyController)) as MoneyController;
+        moneyController.addPlayers(players);
         moneyController.Test();
+
+        //MoneyController moneyController = gameObject.AddComponent
+
+        //MoneyController moneyController = new MoneyController(players);
+
+        //moneyController.Test();
+        //Player1.text = "Boer: " + moneyController.getMoney("Boer");
         
     }
 
