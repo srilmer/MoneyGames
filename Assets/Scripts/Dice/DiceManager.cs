@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ThrowDice : MonoBehaviour
+public class DiceManager : MonoBehaviour
 {
     public List<GameObject> dices;
     public GameObject Button;
     public Text DiceText;
-    public List<GameObject> camaras;
+    public CameraManager cm;
+    public WaypointMovement wpm;
+    public RoundManager roundManager;
 
     float dirX;
     float dirY;
@@ -17,10 +19,7 @@ public class ThrowDice : MonoBehaviour
     public void ThrowDices()
     {
         Button.SetActive(false);
-
-        //Reminder Make CameraHandler Class
-        camaras[0].SetActive(false);
-        camaras[1].SetActive(true);
+        cm.SetDiceCamera();
 
         foreach (GameObject die in dices)
         {
@@ -49,7 +48,9 @@ public class ThrowDice : MonoBehaviour
         {
             diceNumber += die.GetComponent<Die_d6>().value;
         }
-        DiceText.text = "You Threw " + diceNumber + "!";
+        DiceText.text = "Speler 1 heeft " + diceNumber + " gegooid!";
+        wpm.moveTo += diceNumber;
+        cm.SetPlayerCamera(0);
 
         yield return new WaitForSeconds(4);
 
@@ -60,8 +61,10 @@ public class ThrowDice : MonoBehaviour
         }
 
         DiceText.text = "";
-        camaras[1].SetActive(false);
-        camaras[0].SetActive(true);
-        Button.SetActive(true);
+        cm.SetPlayboardCamera();
+
+        yield return new WaitForSeconds(2);
+
+        roundManager.setGameStartStart();
     }
 }
