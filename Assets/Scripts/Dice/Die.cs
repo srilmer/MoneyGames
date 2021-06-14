@@ -28,8 +28,6 @@ public class Die : MonoBehaviour {
 	
 	// current value, 0 is undetermined (die is rolling) or invalid.
 	public int value = 0;
-    public WaypointMovement wp;
-    private bool done = false;
 
 	//------------------------------------------------------------------------------------------------------------------------------
 	// protected and private attributes
@@ -98,11 +96,6 @@ public class Die : MonoBehaviour {
                     if (nDelta < delta)
                     {
                         value = side;
-                        if(!done)
-                        {
-                            wp.setMoveto(value);
-                            done = true;
-                        }
                         delta = nDelta;
                     }
                 }
