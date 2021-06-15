@@ -39,7 +39,6 @@ public class WaypointMovement : MonoBehaviour
         Vector3 targetPosition = GetWaypointTargetPosition();
 
         float distanceToTarget = Vector3.Distance(myPosition, targetPosition);
-
         return distanceToTarget < epsilonTarget;
     }
 
