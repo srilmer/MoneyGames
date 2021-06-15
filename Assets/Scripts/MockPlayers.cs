@@ -19,13 +19,13 @@ public class MockPlayers : MonoBehaviour
     void Start()
     {
 
-        // players.Add("Boer");
-        // players.Add("Kapper");
-        // players.Add("Postbode");
+        players.Add("Boer");
+        players.Add("Kapper");
+        players.Add("Postbode");
 
-        // MoneyController moneyController = GameObject.FindObjectOfType(typeof(MoneyController)) as MoneyController;
-        // moneyController.addPlayers(players);
-        // moneyController.Test();
+        MoneyController moneyController = GameObject.FindObjectOfType(typeof(MoneyController)) as MoneyController;
+        moneyController.addPlayers(players);
+        moneyController.Test();
 
         //MoneyController moneyController = gameObject.AddComponent
 
