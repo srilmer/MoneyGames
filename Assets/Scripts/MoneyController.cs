@@ -19,19 +19,6 @@ public class MoneyController : MonoBehaviour
     public Text Player6;
     
     List<Text> textList = new List<Text>();
-    
-
-    // public MoneyController(List<string> players){
-    //     this.players = players;
-
-    //     for (int i = 0; i < players.Count; i++){
-    //         bank.Add(players[i], 0);
-    //         investment.Add(players[i], 0);
-
-    //         int value = bank[players[i]];
-    //     } 
-    // }
-
 
     void Start()
     {
