@@ -10,14 +10,12 @@ public class inv_button : MonoBehaviour
 
     public void CloseInvestingOpenResults()
     {
+        Instantiate(canvas_resultaat);
         canvas_investering.enabled = false;
-        canvas_resultaat.enabled = true;
     }
 
     public void CloseResultaat()
     {
         canvas_resultaat.enabled = false;
     }
-
-    // functie voor investering ofzo...
 }

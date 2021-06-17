@@ -108,10 +108,10 @@ GameObject:
   - component: {fileID: 7736809500380355357}
   - component: {fileID: 7062598921778269892}
   - component: {fileID: 1005841416140540991}
-  - component: {fileID: 7853244717352517468}
+  - component: {fileID: 6802644595503542850}
   m_Layer: 0
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: PizzaBezorger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,7 +192,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7853244717352517468
+--- !u!114 &6802644595503542850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,9 +201,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3935348546002306640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3560801790f654fb35376cd9476ae0, type: 3}
+  m_Script: {fileID: 11500000, guid: 36ae0e80c45f60642a82d68aa647c955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kapper: {fileID: 5466082854399272803, guid: ba82882807358664fb30b34ce42cd2e2, type: 3}
+  brandweer: {fileID: 5466082854399272803, guid: ac02776caaeaaaf498907d3a3ff878cb, type: 3}
+  postbode: {fileID: 5466082854399272803, guid: 5abc1af50c4315e419f4ef7ea9e2bef2, type: 3}
+  pizzaBezorger: {fileID: 5466082854399272803, guid: 131d12aecc59104478f75e2c41e2d044, type: 3}
+  boer: {fileID: 5466082854399272803, guid: 479825445e7c9da46b458f2c7c33c70f, type: 3}
+  tandarts: {fileID: 5466082854399272803, guid: c7dbf5d0fca8e7d41b7213ded8c11ff6, type: 3}
+  investeren: {fileID: 5118479380677657551, guid: 07396a94274fae24eb50ed69c3abfdd5, type: 3}
 --- !u!1 &8291715780367678006
 GameObject:
   m_ObjectHideFlags: 0

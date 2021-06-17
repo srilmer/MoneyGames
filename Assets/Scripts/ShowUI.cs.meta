@@ -1,15 +1,9 @@
 fileFormatVersion: 2
-guid: 54c29d50676fa514699d09512391e61d
+guid: 36ae0e80c45f60642a82d68aa647c955
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - kapper: {instanceID: 0}
-  - brandweer: {instanceID: 0}
-  - postbode: {instanceID: 0}
-  - pizzaBezorger: {instanceID: 0}
-  - boer: {instanceID: 0}
-  - tandarts: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

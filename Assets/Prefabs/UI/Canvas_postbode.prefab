@@ -458,9 +458,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5466082855152040423}
-        m_TargetAssemblyTypeName: ShowUI, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 3771568654077202119}
+        m_TargetAssemblyTypeName: UI_Button, Assembly-CSharp
+        m_MethodName: HideUi
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

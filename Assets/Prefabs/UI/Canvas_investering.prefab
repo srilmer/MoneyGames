@@ -1444,7 +1444,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9105296303204439078}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1172547377316926250}
+        m_TargetAssemblyTypeName: inv_button, Assembly-CSharp
+        m_MethodName: CloseInvestingOpenResults
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1172547377316926250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1457,8 +1469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd9e9df5630414438491a4e4657fc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas_investering: {fileID: 0}
-  canvas_resultaat: {fileID: 0}
+  canvas_investering: {fileID: 5118479380677657551}
+  canvas_resultaat: {fileID: 3850650377018460803, guid: d6fdf4b7b30ab2f428776d61d173c567, type: 3}
 --- !u!1 &7743409656227692477
 GameObject:
   m_ObjectHideFlags: 0

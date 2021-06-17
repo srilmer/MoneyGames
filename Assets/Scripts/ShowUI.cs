@@ -6,22 +6,25 @@ using UnityEngine.UI;
 public class ShowUI : MonoBehaviour
 {
     [SerializeField]
-    private Canvas kapper;
+    public Canvas kapper;
 
     [SerializeField]
-    private Canvas brandweer;
+    public Canvas brandweer;
 
     [SerializeField]
-    private Canvas postbode;
+    public Canvas postbode;
 
     [SerializeField]
-    private Canvas pizzaBezorger;
+    public Canvas pizzaBezorger;
 
     [SerializeField]
-    private Canvas boer;
+    public Canvas boer;
 
     [SerializeField]
-    private Canvas tandarts;
+    public Canvas tandarts;
+
+    [SerializeField]
+    public Canvas investeren;
 
     private GameObject ThePlayer;
 
@@ -49,23 +52,26 @@ public class ShowUI : MonoBehaviour
             switch (this.tag.ToString())
             {
                 case "Kapper":
-                    kapper.enabled = true;
+                    Instantiate(kapper);
                     break;
                 case "Brandweer":
-                    brandweer.enabled = true;
+                    Instantiate(brandweer);
                     break;
                 case "Postbode":
-                    postbode.enabled = true;
+                    Instantiate(postbode);
                     break;
                 case "PizzaBezorger":
-                    pizzaBezorger.enabled = true;
+                    Instantiate(pizzaBezorger);
                     break;
-                case "tandarts":
-                    tandarts.enabled = true;
+                case "Tandarts":
+                    Instantiate(tandarts);
                     break;
                 case "Boer":
-                    boer.enabled = true;
+                    Instantiate(boer);
                     break;
+                case "Investeren":
+                    Instantiate(investeren);
+                    break; 
             }
         }
     }
