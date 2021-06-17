@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum round { Player1, Player2, Player3, Player4 }
 public enum gameState { Start, ThrowingScreen, ThrowingAnimation, Walking, Choosing}
@@ -12,7 +11,6 @@ public class RoundManager : MonoBehaviour
     public int playersCount = 4;
     public DiceManager diceManager;
     public GameObject playerTurnUI;
-    public Text playerRoundText;
 
     private round round;
     private gameState gameState;
@@ -44,46 +42,22 @@ public class RoundManager : MonoBehaviour
         }
     }
 
-    public int getPlayerRound()
-    {
-        switch (round)
-        {
-            case round.Player1:
-                return 0;
-            case round.Player2:
-                return 1;
-            case round.Player3:
-                return 2;
-            case round.Player4:
-                return 3;
-            default:
-                return 0;
-        }
-    }
-
-    public void SetPlayerRound(int player)
+    
+    private void SetPlayerRound(int player)
     {
         switch (player)
         {
-            case 0:
-                round = round.Player1;
-                playerRoundText.text = "Speler " + 1 + " is aan de beurt!";
-                break;
             case 1:
-                round = round.Player2;
-                playerRoundText.text = "Speler " + 2 + " is aan de beurt!";
+                round = round.Player1;
                 break;
             case 2:
-                round = round.Player3;
-                playerRoundText.text = "Speler " + 3 + " is aan de beurt!";
+                round = round.Player2;
                 break;
             case 3:
-                round = round.Player4;
-                playerRoundText.text = "Speler " + 4 + " is aan de beurt!";
+                round = round.Player3;
                 break;
-            default:
-                round = round.Player1;
-                playerRoundText.text = "Speler " + 1 + " is aan de beurt!";
+            case 4:
+                round = round.Player4;
                 break;
         }
     }

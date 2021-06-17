@@ -9,9 +9,8 @@ public class DiceManager : MonoBehaviour
     public GameObject Button;
     public Text DiceText;
     public CameraManager cm;
-    public WaypointMovement[] wpm;
+    public WaypointMovement wpm;
     public RoundManager roundManager;
-
 
     float dirX;
     float dirY;
@@ -49,9 +48,8 @@ public class DiceManager : MonoBehaviour
         {
             diceNumber += die.GetComponent<Die_d6>().value;
         }
-        DiceText.text = "Speler "+ (roundManager.getPlayerRound() +1) + " heeft " + diceNumber + " gegooid!";
-
-        wpm[roundManager.getPlayerRound()].moveTo += diceNumber;
+        DiceText.text = "Speler 1 heeft " + diceNumber + " gegooid!";
+        wpm.moveTo += diceNumber;
         cm.SetPlayerCamera(0);
 
         yield return new WaitForSeconds(4);
@@ -65,7 +63,8 @@ public class DiceManager : MonoBehaviour
         DiceText.text = "";
         cm.SetPlayboardCamera();
 
-        roundManager.SetPlayerRound(roundManager.getPlayerRound() + 1);
+        yield return new WaitForSeconds(2);
+
         roundManager.setGameStartStart();
     }
 }
