@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public enum round { Player1, Player2, Player3, Player4 }
-public enum gameState { Start, ThrowingScreen, ThrowingAnimation, Walking, Choosing}
+public enum gameState { Start, ThrowingScreen, ThrowingAnimation, Walking, Choosing, Winner}
+
+
 
 public class RoundManager : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class RoundManager : MonoBehaviour
     public DiceManager diceManager;
     public GameObject playerTurnUI;
     public Text playerRoundText;
+    public Text playerTurnText;
 
     private round round;
     public gameState gameState;
@@ -68,22 +71,27 @@ public class RoundManager : MonoBehaviour
             case 0:
                 round = round.Player1;
                 playerRoundText.text = "Speler " + 1 + " is aan de beurt!";
+                playerTurnText.text = "Speler 1";
                 break;
             case 1:
                 round = round.Player2;
                 playerRoundText.text = "Speler " + 2 + " is aan de beurt!";
+                playerTurnText.text = "Speler 2";
                 break;
             case 2:
                 round = round.Player3;
                 playerRoundText.text = "Speler " + 3 + " is aan de beurt!";
+                playerTurnText.text = "Speler 3";
                 break;
             case 3:
                 round = round.Player4;
                 playerRoundText.text = "Speler " + 4 + " is aan de beurt!";
+                playerTurnText.text = "Speler 4";
                 break;
             default:
                 round = round.Player1;
                 playerRoundText.text = "Speler " + 1 + " is aan de beurt!";
+                playerTurnText.text = "Speler 1";
                 break;
         }
     }

@@ -5,16 +5,7 @@ using UnityEngine.UI;
 
 public class MockPlayers : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    // Deze class vervangt het startscherm en stuurt een mock lijst met spelers naar de money controller.
-
     List<string> players = new List<string>();
-
-    //public Text Player1;
-
-    
-
 
     void Start()
     {
@@ -33,12 +24,6 @@ public class MockPlayers : MonoBehaviour
 
         //moneyController.Test();
         //Player1.text = "Boer: " + moneyController.getMoney("Boer");
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }

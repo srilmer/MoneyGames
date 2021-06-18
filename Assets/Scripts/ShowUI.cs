@@ -32,6 +32,7 @@ public class ShowUI : MonoBehaviour
     private Vector3 startPos;
 
     private GameObject roundManager;
+    private GameObject PlayerText;
 
     void Start()
     {
@@ -40,6 +41,7 @@ public class ShowUI : MonoBehaviour
         inTrigger = false;
         startPos = ThePlayer.transform.position;
         roundManager = GameObject.Find("RoundManager");
+        
     }
 
     IEnumerator OnTriggerEnter(Collider player)
@@ -50,33 +52,58 @@ public class ShowUI : MonoBehaviour
         // Check if the object has 'player' tag
         // Check if the object is in the trigger after 2 seconds
         // Check if the player has moved from it's original location
-        if(player.CompareTag("Player") && inTrigger && (startPos != ThePlayer.transform.position))
+        if (player.CompareTag("Player") && inTrigger && (startPos != ThePlayer.transform.position))
         {
             roundManager.GetComponent<RoundManager>().setGameStateChoosing();
             switch (this.tag.ToString())
             {
                 case "Kapper":
+                    player.GetComponent<Player>().playerJob = "Kapper";
                     Instantiate(kapper);
                     break;
                 case "Brandweer":
                     Instantiate(brandweer);
+                    player.GetComponent<Player>().playerJob = "Brandweer";
                     break;
                 case "Postbode":
                     Instantiate(postbode);
+                    player.GetComponent<Player>().playerJob = "Postpode";
                     break;
                 case "PizzaBezorger":
                     Instantiate(pizzaBezorger);
+                    player.GetComponent<Player>().playerJob = "PizzaBezorger";
                     break;
                 case "Tandarts":
                     Instantiate(tandarts);
+                    player.GetComponent<Player>().playerJob = "Tandarts";
                     break;
                 case "Boer":
                     Instantiate(boer);
+                    player.GetComponent<Player>().playerJob = "Boer";
                     break;
                 case "Investeren":
                     Instantiate(investeren);
                     break; 
             }
+
+            switch (player.GetComponent<Player>().playerName)
+            {
+                case "Speler 1":
+                    PlayerText = GameObject.Find("Player1");
+                    break;
+                case "Speler 2":
+                    PlayerText = GameObject.Find("Player2");
+                    break;
+                case "Speler 3":
+                    PlayerText = GameObject.Find("Player3");
+                    break;
+                case "Speler 4":
+                    PlayerText = GameObject.Find("Player4");
+                    break;
+            }
+            
+            PlayerText.GetComponent<UnityEngine.UI.Text>().text = player.GetComponent<Player>().playerName + "\n" +
+                player.GetComponent<Player>().playerJob + "\n" + player.GetComponent<Player>().playerMoney;
         }
     }
 

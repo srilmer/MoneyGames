@@ -11,45 +11,22 @@ public class MoneyController : MonoBehaviour
 
     List<string> players = new List<string>();
 
-    public Text Player1;
-    public Text Player2;
-    public Text Player3;
-    public Text Player4;
-    public Text Player5;
-    public Text Player6;
+    public Text[] Players;
     
     List<Text> textList = new List<Text>();
     
 
-    // public MoneyController(List<string> players){
-    //     this.players = players;
-
-    //     for (int i = 0; i < players.Count; i++){
-    //         bank.Add(players[i], 0);
-    //         investment.Add(players[i], 0);
-
-    //         int value = bank[players[i]];
-    //     } 
-    // }
-
 
     void Start()
     {
-        textList.Add(Player1);
-        textList.Add(Player2);
-        textList.Add(Player3);
-        textList.Add(Player4);
-        textList.Add(Player5);
-        textList.Add(Player6);
+        foreach(Text p in Players)
+        {
+            textList.Add(p);
+        }
 
         foreach (Text p in textList){
            p.text = "";
         }
-
-    }
-
-    void Update()
-    {
 
     }
 
