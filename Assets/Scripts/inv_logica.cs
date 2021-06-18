@@ -115,6 +115,9 @@ public class inv_logica : MonoBehaviour
         Destroy(GameObject.Find("Canvas_investeren_resultaat(Clone)"));
         Destroy(GameObject.Find("Canvas_investering(Clone)"));
 
+        GameObject roundManager = GameObject.Find("RoundManager");
+        roundManager.GetComponent<RoundManager>().setGameStartStart();
+
         // Geld overmaken naar players bank account
         //MoneyController mc = gameObject.GetComponent<MoneyController>();
         //RoundManager rm = gameObject.GetComponent<RoundManager>();

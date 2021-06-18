@@ -31,16 +31,19 @@ public class ShowUI : MonoBehaviour
     private bool inTrigger;
     private Vector3 startPos;
 
+    private GameObject roundManager;
+
     void Start()
     {
         // Get Player and playermovementscript info
         ThePlayer = GameObject.FindWithTag("Player");
         inTrigger = false;
         startPos = ThePlayer.transform.position;
+        roundManager = GameObject.Find("RoundManager");
     }
 
     IEnumerator OnTriggerEnter(Collider player)
-    {
+    {      
         inTrigger = true;
         yield return new WaitForSeconds(1);
 
@@ -49,6 +52,7 @@ public class ShowUI : MonoBehaviour
         // Check if the player has moved from it's original location
         if(player.CompareTag("Player") && inTrigger && (startPos != ThePlayer.transform.position))
         {
+            roundManager.GetComponent<RoundManager>().setGameStateChoosing();
             switch (this.tag.ToString())
             {
                 case "Kapper":

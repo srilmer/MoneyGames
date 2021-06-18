@@ -4,19 +4,7 @@ using UnityEngine;
 
 public class StartingTileManager : MonoBehaviour
 {
-    int startCount;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        int startCount = 0;
-    }
+    int startCount = 0;
 
     private void OnTriggerEnter(Collider other)
     {

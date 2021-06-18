@@ -52,7 +52,7 @@ public class DiceManager : MonoBehaviour
         DiceText.text = "Speler "+ (roundManager.getPlayerRound() +1) + " heeft " + diceNumber + " gegooid!";
 
         wpm[roundManager.getPlayerRound()].moveTo += diceNumber;
-        cm.SetPlayerCamera(0);
+        cm.SetPlayerCamera(roundManager.getPlayerRound());
 
         yield return new WaitForSeconds(4);
 
@@ -66,6 +66,5 @@ public class DiceManager : MonoBehaviour
         cm.SetPlayboardCamera();
 
         roundManager.SetPlayerRound(roundManager.getPlayerRound() + 1);
-        roundManager.setGameStartStart();
     }
 }

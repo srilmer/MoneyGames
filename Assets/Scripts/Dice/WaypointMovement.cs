@@ -30,7 +30,9 @@ public class WaypointMovement : MonoBehaviour
 
     public void setMoveto(int value)
     {
-        this.moveTo += value;
+        if(moveTo + value <= 27)
+         this.moveTo += value;
+        this.moveTo = value;
     }
 
     private bool IsWaypointReached()

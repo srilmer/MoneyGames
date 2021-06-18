@@ -15,7 +15,7 @@ public class RoundManager : MonoBehaviour
     public Text playerRoundText;
 
     private round round;
-    private gameState gameState;
+    public gameState gameState;
 
     private bool gameDone = false;
 
@@ -100,6 +100,10 @@ public class RoundManager : MonoBehaviour
         gameState = gameState.ThrowingAnimation;
     }
     public void setGameStateWalking()
+    {
+        gameState = gameState.Walking;
+    }
+    public void setGameStateChoosing()
     {
         gameState = gameState.Walking;
     }
