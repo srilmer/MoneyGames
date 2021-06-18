@@ -10,8 +10,11 @@ public class WaypointMovement : MonoBehaviour
     public RigidbodyController rbController;
     public float epsilonTarget;
     public List<Die> dies;
+    private bool isFirstRound = true;
+    public GameObject SalaryUI;
 
     private int waypointTargetIndex;
+    bool isFirstTrigger = true;
 
     private void Start()
     {
@@ -28,11 +31,32 @@ public class WaypointMovement : MonoBehaviour
         MoveTowardsWaypointTarget();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        transform.Rotate(Vector3.right * 50);
+
+        if (collision.gameObject.CompareTag("StartingTile") && !isFirstRound && isFirstTrigger)
+        {
+            isFirstTrigger = false;
+            SalaryUI.SetActive(true);
+            Time.timeScale = 0;
+            StartCoroutine(SetTriggerTIme());
+        }
+    }
+    IEnumerator SetTriggerTIme()
+    {       
+        yield return new WaitForSeconds(2f);
+        isFirstTrigger = true;
+        
+    }
+
     public void setMoveto(int value)
     {
         if(this.moveTo + value >= 27)
         {
-            this.moveTo = (this.moveTo + value - 27);
+            isFirstRound = false;
+            int temp = this.moveTo + value;
+            this.moveTo = (temp - 27);
         }
          this.moveTo += value;
     }

@@ -16,6 +16,7 @@ public class RoundManager : MonoBehaviour
     public GameObject playerTurnUI;
     public Text playerRoundText;
     public Text playerTurnText;
+    public GameObject WinnerUI;
 
     private round round;
     public gameState gameState;
@@ -44,6 +45,11 @@ public class RoundManager : MonoBehaviour
         {
             diceManager.Button.SetActive(false);
             playerTurnUI.SetActive(false);
+        }
+        if (gameState == gameState.Winner)
+        {
+            WinnerUI.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
