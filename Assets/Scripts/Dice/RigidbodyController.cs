@@ -9,6 +9,10 @@ public class RigidbodyController : MonoBehaviour
 
     private bool canMove = true;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        transform.Rotate(Vector3.right * 50);
+    }
     public bool CanMove 
     { 
         set 

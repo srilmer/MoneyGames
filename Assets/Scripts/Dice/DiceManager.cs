@@ -51,10 +51,10 @@ public class DiceManager : MonoBehaviour
         }
         //DiceText.text = "Speler "+ (roundManager.getPlayerRound() +1) + " heeft " + diceNumber + " gegooid!";
 
-        wpm[roundManager.getPlayerRound()].moveTo += diceNumber;
+        wpm[roundManager.getPlayerRound()].setMoveto(diceNumber);
         cm.SetPlayerCamera(roundManager.getPlayerRound());
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
 
         foreach (GameObject die in dices)
         {

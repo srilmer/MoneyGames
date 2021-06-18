@@ -33,6 +33,7 @@ public class ShowUI : MonoBehaviour
 
     private GameObject roundManager;
     private GameObject PlayerText;
+    private GameObject paymentUI;
 
     void Start()
     {
@@ -41,51 +42,21 @@ public class ShowUI : MonoBehaviour
         inTrigger = false;
         startPos = ThePlayer.transform.position;
         roundManager = GameObject.Find("RoundManager");
-        
+        paymentUI = GameObject.Find("PaymentUIHandler");
+
+
     }
 
     IEnumerator OnTriggerEnter(Collider player)
     {      
         inTrigger = true;
         yield return new WaitForSeconds(1);
-
+        
         // Check if the object has 'player' tag
         // Check if the object is in the trigger after 2 seconds
         // Check if the player has moved from it's original location
         if (player.CompareTag("Player") && inTrigger && (startPos != ThePlayer.transform.position))
         {
-            roundManager.GetComponent<RoundManager>().setGameStateChoosing();
-            switch (this.tag.ToString())
-            {
-                case "Kapper":
-                    player.GetComponent<Player>().playerJob = "Kapper";
-                    Instantiate(kapper);
-                    break;
-                case "Brandweer":
-                    Instantiate(brandweer);
-                    player.GetComponent<Player>().playerJob = "Brandweer";
-                    break;
-                case "Postbode":
-                    Instantiate(postbode);
-                    player.GetComponent<Player>().playerJob = "Postpode";
-                    break;
-                case "PizzaBezorger":
-                    Instantiate(pizzaBezorger);
-                    player.GetComponent<Player>().playerJob = "PizzaBezorger";
-                    break;
-                case "Tandarts":
-                    Instantiate(tandarts);
-                    player.GetComponent<Player>().playerJob = "Tandarts";
-                    break;
-                case "Boer":
-                    Instantiate(boer);
-                    player.GetComponent<Player>().playerJob = "Boer";
-                    break;
-                case "Investeren":
-                    Instantiate(investeren);
-                    break; 
-            }
-
             switch (player.GetComponent<Player>().playerName)
             {
                 case "Speler 1":
@@ -101,7 +72,100 @@ public class ShowUI : MonoBehaviour
                     PlayerText = GameObject.Find("Player4");
                     break;
             }
-            
+
+            roundManager.GetComponent<RoundManager>().setGameStateChoosing();
+            switch (this.tag.ToString())
+            {
+                case "Kapper":
+                    if (player.GetComponent<Player>().playerJob == "Werkloos")
+                    {
+                        Instantiate(kapper);
+                        player.GetComponent<Player>().playerJob = "Kapper";
+                    }
+                        
+                    else
+                        {
+                            player.GetComponent<Player>().PayMoney(20);
+                            paymentUI.GetComponent<PaymentUIHandler>().ShowKapperBezoeker();
+                        }
+                    
+                    break;
+                case "Brandweer":
+                    
+                    
+                    if (player.GetComponent<Player>().playerJob == "Werkloos")
+                    {
+                        Instantiate(brandweer);
+                        player.GetComponent<Player>().playerJob = "Brandweer";
+                    }
+                    else
+                        { 
+                            player.GetComponent<Player>().PayMoney(20);
+                            paymentUI.GetComponent<PaymentUIHandler>().ShowBrandweerBezoeker();
+                        }
+                    break;
+                case "Postbode":
+                    
+                    if (player.GetComponent<Player>().playerJob == "Werkloos")
+                    {
+                        Instantiate(postbode);
+                        player.GetComponent<Player>().playerJob = "Postpode";
+                    }
+                        
+                    else
+                        { 
+                            player.GetComponent<Player>().PayMoney(20);
+                            paymentUI.GetComponent<PaymentUIHandler>().ShowPostBodeBezoeker();
+                        }
+                    break;
+                case "PizzaBezorger":
+                    
+                    if (player.GetComponent<Player>().playerJob == "Werkloos")
+                    {
+                        Instantiate(pizzaBezorger);
+                        player.GetComponent<Player>().playerJob = "PizzaBezorger";
+                    }
+                       
+                    else
+                        { 
+                            player.GetComponent<Player>().PayMoney(20);
+                            paymentUI.GetComponent<PaymentUIHandler>().ShowPizzaBezorgerBezoeker();
+                        }
+                    break;
+                case "Tandarts":
+                    
+                    if (player.GetComponent<Player>().playerJob == "Werkloos")
+                    {
+                        Instantiate(tandarts);
+                        player.GetComponent<Player>().playerJob = "Tandarts";
+                    }
+                        
+                    else
+                        { 
+                            player.GetComponent<Player>().PayMoney(20);
+                            paymentUI.GetComponent<PaymentUIHandler>().ShowTandartsBezoeker();
+                        }
+                    break;
+                case "Boer":
+                    
+                    if (player.GetComponent<Player>().playerJob == "Werkloos")
+                    {
+                        Instantiate(boer);
+                        player.GetComponent<Player>().playerJob = "Boer";
+                    }                       
+                    else
+                        { 
+                            player.GetComponent<Player>().PayMoney(20);
+                            paymentUI.GetComponent<PaymentUIHandler>().ShowBoerBezoeker();
+                        }
+                    break;
+                case "Investeren":
+                    Instantiate(investeren);
+                    break; 
+            }
+
+
+
             PlayerText.GetComponent<UnityEngine.UI.Text>().text = player.GetComponent<Player>().playerName + "\n" +
                 player.GetComponent<Player>().playerJob + "\n" + player.GetComponent<Player>().playerMoney;
         }
