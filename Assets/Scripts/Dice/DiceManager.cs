@@ -63,8 +63,6 @@ public class DiceManager : MonoBehaviour
         }
 
         //DiceText.text = "";
-        cm.SetPlayboardCamera();
-
-        roundManager.SetPlayerRound(roundManager.getPlayerRound() + 1);
+        cm.SetPlayboardCamera();        
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public enum round { Player1, Player2, Player3, Player4 }
-public enum gameState { Start, ThrowingScreen, ThrowingAnimation, Walking, Choosing, Winner}
+public enum gameState { Setup ,Start, ThrowingScreen, ThrowingAnimation, Walking, Choosing, Winner}
 
 
 
@@ -17,16 +17,15 @@ public class RoundManager : MonoBehaviour
     public Text playerRoundText;
     public Text playerTurnText;
     public GameObject WinnerUI;
+    public Player[] players;
 
     private round round;
     public gameState gameState;
 
-    private bool gameDone = false;
-
     private void Start()
     {
         round = round.Player1;
-        gameState = gameState.Start;
+        gameState = gameState.Setup;
     }
 
     void Update()
@@ -68,6 +67,11 @@ public class RoundManager : MonoBehaviour
             default:
                 return 0;
         }
+    }
+
+    public bool getPlayerAI()
+    {
+        return players[getPlayerRound()].isAI;
     }
 
     public void SetPlayerRound(int player)

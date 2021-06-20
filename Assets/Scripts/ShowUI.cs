@@ -165,9 +165,13 @@ public class ShowUI : MonoBehaviour
             }
 
 
-
-            PlayerText.GetComponent<UnityEngine.UI.Text>().text = player.GetComponent<Player>().playerName + "\n" +
-                player.GetComponent<Player>().playerJob + "\n" + player.GetComponent<Player>().playerMoney;
+            try {
+                player.GetComponent<Player>().UpdatePlayerText();
+            }
+            catch
+            {
+                //some fancy error handling to show playertext is empty because it's first round
+            }
         }
     }
 

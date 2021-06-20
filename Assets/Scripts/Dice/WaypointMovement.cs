@@ -39,7 +39,7 @@ public class WaypointMovement : MonoBehaviour
         {
             isFirstTrigger = false;
             SalaryUI.SetActive(true);
-            Time.timeScale = 0;
+
             StartCoroutine(SetTriggerTIme());
         }
     }

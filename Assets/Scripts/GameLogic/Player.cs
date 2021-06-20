@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int playerMoney = 100;
     public string playerJob = "Werkloos";
     public Text playerText;
+    public bool isAI;
 
     public void AddMoney(int value)
     {
