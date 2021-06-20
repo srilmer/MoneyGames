@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     public string playerName;
     public int playerMoney = 100;
     public string playerJob = "Werkloos";
+    public Text playerText;
 
     public void AddMoney(int value)
     {
@@ -21,5 +23,11 @@ public class Player : MonoBehaviour
     public void PayMoney(int value)
     {
         playerMoney -= value;
+    }
+
+    public void UpdatePlayerText()
+    {
+        playerText.text = playerName + "\n" +
+                playerJob + "\n" + playerMoney;
     }
 }

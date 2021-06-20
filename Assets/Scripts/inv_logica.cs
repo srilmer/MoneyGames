@@ -73,6 +73,7 @@ public class inv_logica : MonoBehaviour
         }
 
         player.GetComponent<Player>().PayMoney(inv_bedrag);
+        player.GetComponent<Player>().UpdatePlayerText();
         // zet de waarde die geinvesteerd is op het scherm.  
         text_invested_amount.text = inv_bedrag.ToString();
     }
@@ -114,6 +115,7 @@ public class inv_logica : MonoBehaviour
                 playerEarnings.text = "Wat jammer, je hebt je investering verloren. Volgende keer beter.";
                 break;
         }
+        player.GetComponent<Player>().UpdatePlayerText();
 
         // investerings UI uitzetten en plaats maken voor het resultaat
         text_invested_amount.enabled = true;
