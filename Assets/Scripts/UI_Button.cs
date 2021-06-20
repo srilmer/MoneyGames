@@ -39,10 +39,6 @@ public class UI_Button : MonoBehaviour
             AIText.SetActive(true);
             StartCoroutine(HideUIAI());
         }
-        else
-        {
-            nextButton.transform.position = buttonPosition;
-        }
     }
 
     public void HideUi()
@@ -56,7 +52,7 @@ public class UI_Button : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         AIText.SetActive(false);
-        RoundManager.setGameStartStart();
+        //RoundManager.setGameStartStart();
         RoundManager.SetPlayerRound(RoundManager.getPlayerRound() + 1);
         Destroy(this.transform.parent.gameObject);
     }

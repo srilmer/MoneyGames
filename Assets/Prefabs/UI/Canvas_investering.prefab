@@ -79,6 +79,164 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Overslaan
+--- !u!1 &1016803825566081579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5869549640125711207}
+  - component: {fileID: 5083339473729034769}
+  - component: {fileID: 7167032832324890961}
+  m_Layer: 5
+  m_Name: InvestAIText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5869549640125711207
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016803825566081579}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5118479380677657550}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -156.7, y: -595.7}
+  m_SizeDelta: {x: 559.7, y: 122.7}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!222 &5083339473729034769
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016803825566081579}
+  m_CullTransparentMesh: 1
+--- !u!114 &7167032832324890961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016803825566081579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.07841852, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 240
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: De computer denkt na over een investering
+--- !u!1 &3744880034111149204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4163692795578872757}
+  - component: {fileID: 7077654683210778824}
+  - component: {fileID: 675023260557162961}
+  m_Layer: 5
+  m_Name: AIHappyText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4163692795578872757
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3744880034111149204}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5118479380677657550}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -156.7, y: -595.7}
+  m_SizeDelta: {x: 559.7, y: 122.7}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!222 &7077654683210778824
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3744880034111149204}
+  m_CullTransparentMesh: 1
+--- !u!114 &675023260557162961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3744880034111149204}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.07841852, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 240
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: De computer denkt na over een investering
 --- !u!1 &5118479379737762223
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,6 +617,7 @@ GameObject:
   - component: {fileID: 5118479380677657551}
   - component: {fileID: 5118479380677657536}
   - component: {fileID: 5118479380677657537}
+  - component: {fileID: 3009517316335778163}
   m_Layer: 5
   m_Name: Canvas_investering
   m_TagString: Untagged
@@ -485,6 +644,8 @@ RectTransform:
   - {fileID: 5118479380582775956}
   - {fileID: 5118479381812820158}
   - {fileID: 4080481302903199055}
+  - {fileID: 4163692795578872757}
+  - {fileID: 5869549640125711207}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -554,6 +715,30 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3009517316335778163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5118479380677657538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db06229bb2a774478d7b7107f18637a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  investAIText: {fileID: 1016803825566081579}
+  investButton: {fileID: 6869641307931064840}
+  backButton: {fileID: 7798428216741586659}
+  inputField: {fileID: 5118479381647694189}
+  playerMoneyField: {fileID: 5118479381381362392}
+  canvas_resultaat: {fileID: 3850650377018460803, guid: d6fdf4b7b30ab2f428776d61d173c567, type: 3}
+  canvas_investering: {fileID: 5118479380677657551}
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &5118479380747867710
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +1086,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250.09, y: 42.913975}
+  m_AnchoredPosition: {x: 254, y: 42.913975}
   m_SizeDelta: {x: 229.89, y: 85.827}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5118479381381362407
@@ -1417,7 +1602,7 @@ GameObject:
   - component: {fileID: 4258271739837317934}
   - component: {fileID: 1172547377316926250}
   m_Layer: 5
-  m_Name: btn_investeren
+  m_Name: button_next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1642,7 +1827,7 @@ GameObject:
   - component: {fileID: 908387172825020124}
   - component: {fileID: 2062256571440391389}
   - component: {fileID: 4453960178086675228}
-  - component: {fileID: 3970544775041315633}
+  - component: {fileID: 1585334365082489988}
   m_Layer: 5
   m_Name: btn_Terug
   m_TagString: Untagged
@@ -1752,8 +1937,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3970544775041315633}
-        m_TargetAssemblyTypeName: UI_Button, Assembly-CSharp
+      - m_Target: {fileID: 1585334365082489988}
+        m_TargetAssemblyTypeName: HideUI, Assembly-CSharp
         m_MethodName: HideUi
         m_Mode: 1
         m_Arguments:
@@ -1764,7 +1949,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3970544775041315633
+--- !u!114 &1585334365082489988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1773,6 +1958,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7798428216741586659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 847dccea3451dd046b6ad923862bc2b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 17117efeb391a05409972cd97bbd0013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

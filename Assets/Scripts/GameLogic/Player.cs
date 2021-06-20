@@ -29,6 +29,6 @@ public class Player : MonoBehaviour
     public void UpdatePlayerText()
     {
         playerText.text = playerName + "\n" +
-                playerJob + "\n" + playerMoney;
+                playerJob + "\n€" + playerMoney;
     }
 }

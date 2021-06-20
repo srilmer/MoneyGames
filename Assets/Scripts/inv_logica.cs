@@ -40,6 +40,8 @@ public class inv_logica : MonoBehaviour
     private GameObject player;
     private GameObject roundManager;
 
+    private InputField txt_input;
+
     public void Start()
     {
         playerEarnings.gameObject.SetActive(false);
@@ -50,9 +52,6 @@ public class inv_logica : MonoBehaviour
         btn2.gameObject.SetActive(true);
         btn3.gameObject.SetActive(true);
         btn4.gameObject.SetActive(true);
-
-        InputField txt_input = GameObject.Find("Input_investeren_bedrag").GetComponent<InputField>();
-        inv_bedrag = int.Parse(txt_input.text);
 
         roundManager = GameObject.Find("RoundManager");
 
@@ -72,10 +71,31 @@ public class inv_logica : MonoBehaviour
                 break;
         }
 
-        player.GetComponent<Player>().PayMoney(inv_bedrag);
-        player.GetComponent<Player>().UpdatePlayerText();
-        // zet de waarde die geinvesteerd is op het scherm.  
+        if (roundManager.GetComponent<RoundManager>().getPlayerAI())
+        {
+            btn_next.gameObject.SetActive(false);
+            inv_bedrag = AIChooseInvestment();
+            text_invested_amount.text = "€" + inv_bedrag.ToString();
+            player.GetComponent<Player>().PayMoney(inv_bedrag);
+            ShowInvestmentResult();
+            StartCoroutine(WaitForContinue());
+        }
+        else
+        {
+            txt_input = GameObject.Find("Input_investeren_bedrag").GetComponent<InputField>();
+            inv_bedrag = int.Parse(txt_input.text);
+            text_invested_amount.text = "€" + inv_bedrag.ToString();
+            player.GetComponent<Player>().PayMoney(inv_bedrag);
+            player.GetComponent<Player>().UpdatePlayerText();
+        }
+    }
+
+    IEnumerator WaitForContinue()
+    {
+        yield return new WaitForSeconds(6f);
         text_invested_amount.text = inv_bedrag.ToString();
+        player.GetComponent<Player>().UpdatePlayerText();
+        Continue();
     }
 
     public void ShowInvestmentCards()
@@ -121,7 +141,11 @@ public class inv_logica : MonoBehaviour
         text_invested_amount.enabled = true;
         playerEarnings.gameObject.SetActive(true);
         monopolyMan.gameObject.SetActive(true);
-        btn_next.gameObject.SetActive(true);
+
+        if (!roundManager.GetComponent<RoundManager>().getPlayerAI())
+        {
+            btn_next.gameObject.SetActive(true);
+        }
     }
 
     public void Continue()
@@ -147,12 +171,32 @@ public class inv_logica : MonoBehaviour
         GameObject roundManager = GameObject.Find("RoundManager");
         roundManager.GetComponent<RoundManager>().setGameStartStart();
 
-        //mc.addMoney((rm.getPlayerRound() + 1), inv_bedrag);
+        roundManager.GetComponent<RoundManager>().SetPlayerRound(roundManager.GetComponent<RoundManager>().getPlayerRound() + 1);
     }
 
     public void AddInvestment(int amount)
     {
         inv_bedrag = amount;
         Debug.Log(inv_bedrag);
+    }
+
+    public int AIChooseInvestment()
+    {
+        if (player.GetComponent<Player>().playerMoney >= 500)
+        {
+            return 100;
+        }
+        if (player.GetComponent<Player>().playerMoney >= 200)
+        {
+            return 50;
+        }
+        if (player.GetComponent<Player>().playerMoney <= 100)
+        {
+            return 10;
+        }
+        else
+        {
+            return 0;
+        }
     }
 }

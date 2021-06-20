@@ -33,7 +33,8 @@ public class WaypointMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        transform.Rotate(Vector3.right * 50);
+        if(moveTo != 0)
+        transform.Rotate(Vector3.right * 100);
 
         if (collision.gameObject.CompareTag("StartingTile") && !isFirstRound && isFirstTrigger)
         {
@@ -60,7 +61,7 @@ public class WaypointMovement : MonoBehaviour
         }
         else
         {
-            this.moveTo += value;
+            this.moveTo += value ;
         }
     }
 

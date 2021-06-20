@@ -18,7 +18,9 @@ public class RoundManager : MonoBehaviour
     public Text playerTurnText;
     public GameObject WinnerUI;
     public Player[] players;
-
+    public Text playerTurnRoundText;
+    
+    private int playerTurnRound;
     private round round;
     public gameState gameState;
 
@@ -26,6 +28,7 @@ public class RoundManager : MonoBehaviour
     {
         round = round.Player1;
         gameState = gameState.Setup;
+        playerTurnRound = 1;
     }
 
     void Update()
@@ -52,7 +55,12 @@ public class RoundManager : MonoBehaviour
         }
     }
 
-    public int getPlayerRound()
+    public int getThisPlayerMoney()
+    {
+        return players[getPlayerRound()].playerMoney;
+    }
+
+        public int getPlayerRound()
     {
         switch (round)
         {
@@ -65,6 +73,8 @@ public class RoundManager : MonoBehaviour
             case round.Player4:
                 return 3;
             default:
+                playerTurnRound += 1;
+                playerTurnRoundText.text = "Ronde: " + playerTurnRound;
                 return 0;
         }
     }

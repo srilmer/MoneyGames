@@ -485,7 +485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Jammer!\nJe koopt groenten bij\nje hebt de boer \u20AC20 betaald"
+  m_Text: "Jammer!\nJe koopt groenten bij de boer\nen je hebt de boer \u20AC20 betaald"
 --- !u!1 &5466082855152040423
 GameObject:
   m_ObjectHideFlags: 0
