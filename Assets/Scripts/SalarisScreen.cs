@@ -20,12 +20,14 @@ public class SalarisScreen : MonoBehaviour
         roundManagerGO = GameObject.Find("RoundManager");
         RoundManager = roundManagerGO.GetComponent<RoundManager>();
         ButtonStartPosition = button.transform.position;
+        Time.timeScale = 0;
     }
 
     public void Update()
     {
         if (RoundManager.getPlayerAI())
         {
+            Time.timeScale = 1;
             button.transform.position = new Vector3(10000, 10000);
             StartCoroutine(HideUIAI());
             AIReading.SetActive(true);
@@ -33,7 +35,6 @@ public class SalarisScreen : MonoBehaviour
         else
         {
             button.transform.position = ButtonStartPosition;
-
         }
     }
 
@@ -54,16 +55,15 @@ public class SalarisScreen : MonoBehaviour
                 PlayerText = GameObject.Find("Player4");
                 break;
         }
-        players[roundManager.getPlayerRound()].AddMoney(100);
-        PlayerText.GetComponent<UnityEngine.UI.Text>().text = players[roundManager.getPlayerRound()].GetComponent<Player>().playerName + "\n" +
-                players[roundManager.getPlayerRound()].GetComponent<Player>().playerJob + "\n" + players[roundManager.getPlayerRound()].GetComponent<Player>().playerMoney;
+        players[roundManager.getPlayerRound()].AddMoney(150);
+        players[roundManager.getPlayerRound()].UpdatePlayerText();
         Time.timeScale = 1;
         UI.SetActive(false);
     }
 
     IEnumerator HideUIAI()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         AIReading.SetActive(false);
 
         Time.timeScale = 1;
@@ -83,9 +83,8 @@ public class SalarisScreen : MonoBehaviour
                 break;
         }
 
-        players[roundManager.getPlayerRound()].AddMoney(100);
-        PlayerText.GetComponent<UnityEngine.UI.Text>().text = players[roundManager.getPlayerRound()].GetComponent<Player>().playerName + "\n" +
-                players[roundManager.getPlayerRound()].GetComponent<Player>().playerJob + "\n" + players[roundManager.getPlayerRound()].GetComponent<Player>().playerMoney;
+        players[roundManager.getPlayerRound()].AddMoney(150);
+        players[roundManager.getPlayerRound()].UpdatePlayerText();
         UI.SetActive(false);
     }
 
