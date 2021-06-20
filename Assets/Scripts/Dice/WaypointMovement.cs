@@ -56,9 +56,12 @@ public class WaypointMovement : MonoBehaviour
         {
             isFirstRound = false;
             int temp = this.moveTo + value;
-            this.moveTo = (temp - 27);
+            this.moveTo = (temp - 28);
         }
-         this.moveTo += value;
+        else
+        {
+            this.moveTo += value;
+        }
     }
 
     private bool IsWaypointReached()

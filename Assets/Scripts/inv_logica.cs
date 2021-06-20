@@ -37,6 +37,9 @@ public class inv_logica : MonoBehaviour
     [SerializeField]
     public Button btn4;
 
+    private GameObject player;
+    private GameObject roundManager;
+
     public void Start()
     {
         playerEarnings.gameObject.SetActive(false);
@@ -50,7 +53,26 @@ public class inv_logica : MonoBehaviour
 
         InputField txt_input = GameObject.Find("Input_investeren_bedrag").GetComponent<InputField>();
         inv_bedrag = int.Parse(txt_input.text);
-        
+
+        roundManager = GameObject.Find("RoundManager");
+
+        switch (roundManager.GetComponent<RoundManager>().getPlayerRound())
+        {
+            case 0:
+                player = GameObject.Find("Player 1");
+                break;
+            case 1:
+                player = GameObject.Find("Player 2");
+                break;
+            case 2:
+                player = GameObject.Find("Player 3");
+                break;
+            case 3:
+                player = GameObject.Find("Player 4");
+                break;
+        }
+
+        player.GetComponent<Player>().PayMoney(inv_bedrag);
         // zet de waarde die geinvesteerd is op het scherm.  
         text_invested_amount.text = inv_bedrag.ToString();
     }
@@ -74,24 +96,27 @@ public class inv_logica : MonoBehaviour
         {
             case 1:
                 inv_bedrag = inv_bedrag * 2;            // Double input
+                player.GetComponent<Player>().AddMoney(inv_bedrag);
                 playerEarnings.text = "Super, je hebt je investering verdubbelt, je krijgt: " + inv_bedrag + ", gefeliciteerd!";
                 break;
             case 2:
                 inv_bedrag = (inv_bedrag * 3) / 2;      // Gives 1.5 times input
+                player.GetComponent<Player>().AddMoney(inv_bedrag);
                 playerEarnings.text = "Je investering heeft het goed gedaan. je krijgt: " + inv_bedrag + ", gefeliciteerd!";
                 break;
             case 3:
                 inv_bedrag = inv_bedrag / 2;         // halved the input
+                player.GetComponent<Player>().AddMoney(inv_bedrag);
                 playerEarnings.text = "Je bent een gedeelte van je investering kwijt, je krijgt: " + inv_bedrag + ", terug";
                 break;
             case 4:
                 inv_bedrag = 0;                         // lost all investmented
-                playerEarnings.text = "Wat jammer, je hebt je investering verloren. De volgende keer beter.";
+                playerEarnings.text = "Wat jammer, je hebt je investering verloren. Volgende keer beter.";
                 break;
         }
 
         // investerings UI uitzetten en plaats maken voor het resultaat
-        text_invested_amount.enabled = false;
+        text_invested_amount.enabled = true;
         playerEarnings.gameObject.SetActive(true);
         monopolyMan.gameObject.SetActive(true);
         btn_next.gameObject.SetActive(true);
@@ -106,6 +131,8 @@ public class inv_logica : MonoBehaviour
         btn3.gameObject.SetActive(true);
         btn4.gameObject.SetActive(true);
 
+        
+
         // resultaat van investering verbergen
         playerEarnings.enabled = false;
         monopolyMan.enabled = false;
@@ -118,10 +145,6 @@ public class inv_logica : MonoBehaviour
         GameObject roundManager = GameObject.Find("RoundManager");
         roundManager.GetComponent<RoundManager>().setGameStartStart();
 
-        // Geld overmaken naar players bank account
-        //MoneyController mc = gameObject.GetComponent<MoneyController>();
-        //RoundManager rm = gameObject.GetComponent<RoundManager>();
-        //
         //mc.addMoney((rm.getPlayerRound() + 1), inv_bedrag);
     }
 

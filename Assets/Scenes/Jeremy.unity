@@ -4884,7 +4884,7 @@ MonoBehaviour:
   - {fileID: 371059786}
   - {fileID: 806745294}
   - {fileID: 36480823}
-  moveTo: 27
+  moveTo: 7
   rbController: {fileID: 1462848550}
   epsilonTarget: 1
   dies:
