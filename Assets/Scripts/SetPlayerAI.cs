@@ -11,7 +11,7 @@ public class SetPlayerAI : MonoBehaviour
         if(value)
         {
             player.isAI = true;
-            player.playerName = player.playerName + "(AI)";
+            player.playerName += "(AI)";
         }
         else
         {

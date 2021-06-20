@@ -12,7 +12,7 @@ public class MainPlayerUi : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            playerNameFields[i].text = pm.players[i].name + "\nWerkloos" + "\n100 Euro";
+            playerNameFields[i].text = pm.players[i].name + "\nWerkloos" + "\n€100";
         }
     }
 }

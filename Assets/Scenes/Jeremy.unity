@@ -978,7 +978,7 @@ MonoBehaviour:
   - {fileID: 847672140}
   - {fileID: 1564196349}
   - {fileID: 1555735406}
-  playerTurnRoundText: {fileID: 1732886402}
+  playerTurnRoundText: {fileID: 0}
   gameState: 0
 --- !u!4 &240484871
 Transform:
@@ -3701,8 +3701,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847672134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 0.59, z: -0.46}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.15, y: 0.59, z: 1.318}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1382286028}
   m_RootOrder: 5
@@ -3754,7 +3754,9 @@ MonoBehaviour:
   dies:
   - {fileID: 1672973282}
   - {fileID: 1117217534}
+  isFirstRound: 1
   SalaryUI: {fileID: 601261411}
+  investeren: {fileID: 5118479380677657551, guid: 07396a94274fae24eb50ed69c3abfdd5, type: 3}
 --- !u!114 &847672137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6341,8 +6343,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462848547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.08, y: 0.59, z: 1.005}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.33, y: 0.59, z: 1.188}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1382286028}
   m_RootOrder: 4
@@ -6394,7 +6396,9 @@ MonoBehaviour:
   dies:
   - {fileID: 1672973282}
   - {fileID: 1117217534}
+  isFirstRound: 1
   SalaryUI: {fileID: 601261411}
+  investeren: {fileID: 5118479380677657551, guid: 07396a94274fae24eb50ed69c3abfdd5, type: 3}
 --- !u!114 &1462848550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6834,7 +6838,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1657507021}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6914,8 +6918,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555735400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.21, y: 0.59, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.97, y: 0.59, z: -0.1220001}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1382286028}
   m_RootOrder: 7
@@ -6967,7 +6971,9 @@ MonoBehaviour:
   dies:
   - {fileID: 1672973282}
   - {fileID: 1117217534}
+  isFirstRound: 1
   SalaryUI: {fileID: 601261411}
+  investeren: {fileID: 5118479380677657551, guid: 07396a94274fae24eb50ed69c3abfdd5, type: 3}
 --- !u!114 &1555735403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7109,8 +7115,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564196343}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.23, y: 0.59, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.48, y: 0.59, z: 0.11799991}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1382286028}
   m_RootOrder: 6
@@ -7162,7 +7168,9 @@ MonoBehaviour:
   dies:
   - {fileID: 1672973282}
   - {fileID: 1117217534}
+  isFirstRound: 1
   SalaryUI: {fileID: 601261411}
+  investeren: {fileID: 5118479380677657551, guid: 07396a94274fae24eb50ed69c3abfdd5, type: 3}
 --- !u!114 &1564196346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7862,7 +7870,6 @@ RectTransform:
   - {fileID: 1136420684}
   - {fileID: 1886667390}
   - {fileID: 1847096920}
-  - {fileID: 1732886401}
   - {fileID: 1539444633}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -8354,85 +8361,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1732886400
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1732886401}
-  - component: {fileID: 1732886403}
-  - component: {fileID: 1732886402}
-  m_Layer: 5
-  m_Name: Round
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1732886401
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732886400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1657507021}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1135.2, y: 147}
-  m_SizeDelta: {x: 395.8, y: 1111.7}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1732886402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732886400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
-    m_FontSize: 70
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 100
-    m_Alignment: 2
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Ronde: 1'
---- !u!222 &1732886403
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732886400}
-  m_CullTransparentMesh: 1
 --- !u!1 &1751614327
 GameObject:
   m_ObjectHideFlags: 0
@@ -9782,7 +9710,7 @@ MonoBehaviour:
     hij/zij geld als het niet zijn/haar beroep is. \n3. Wanneer een speler op een
     investeringstegel komt kan de speler kiezen om te investeren, er is kans dat
     de speler geld verliest of geld wint.\n4. als de speler langs start komt krijg
-    de speler zijn/haar salaris."
+    de speler zijn/haar salaris.\n5. De speler wint als hij/zij 1000 euro heeft!"
 --- !u!222 &2084197592
 CanvasRenderer:
   m_ObjectHideFlags: 0

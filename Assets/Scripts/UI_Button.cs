@@ -35,7 +35,15 @@ public class UI_Button : MonoBehaviour
     {
         if(RoundManager.getPlayerAI())
         {          
-            nextButton.transform.position = new Vector3(10000, 10000);
+            try
+            {
+                nextButton.transform.position = new Vector3(10000, 10000);
+            }
+            catch
+            {
+                //some fancy errorhandling
+            }
+
             AIText.SetActive(true);
             StartCoroutine(HideUIAI());
         }
@@ -52,7 +60,7 @@ public class UI_Button : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         AIText.SetActive(false);
-        //RoundManager.setGameStartStart();
+        RoundManager.setGameStartStart();
         RoundManager.SetPlayerRound(RoundManager.getPlayerRound() + 1);
         Destroy(this.transform.parent.gameObject);
     }

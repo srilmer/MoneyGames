@@ -28,6 +28,10 @@ public class RoundManager : MonoBehaviour
     {
         round = round.Player1;
         gameState = gameState.Setup;
+        foreach(Player p in players)
+        {
+            p.UpdatePlayerText();
+        }
         playerTurnRound = 1;
     }
 
